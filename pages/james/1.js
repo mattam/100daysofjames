@@ -1,5 +1,5 @@
 import styles from "../../styles/Home.module.css";
-import Link from "next/link";
+import BottomNav from "../../components/bottomNav";
 
 export default function James1() {
   return (
@@ -64,11 +64,7 @@ export default function James1() {
           and to keep oneself unstained by the world.
         </p>
       </div>
-      <Link href="/">
-        <a className={styles.card}>
-          <h3>Home &larr;</h3>
-        </a>
-      </Link>
+      <BottomNav page={1} />
     </div>
   );
 }

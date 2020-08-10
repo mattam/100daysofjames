@@ -1,6 +1,6 @@
 .container {
   min-height: 100vh;
-  padding: 0 0.5rem;
+  padding: 0 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -63,7 +63,14 @@
 }
 
 .passage {
+  max-width: 40rem;
   text-align: left;
+  line-height: 1.3rem;
+}
+
+.bottomNav {
+  display: flex;
+  flex-direction: row;
 }
 
 .code {
