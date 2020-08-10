@@ -12,11 +12,12 @@ export default function BottomNav(props) {
           </a>
         </Link>
       ) : null}
-      <Link href="/">
-        <a className={styles.card}>
-          <h3>Home</h3>
-        </a>
-      </Link>
+      <a
+        href="https://100daysofjames-git-master.mattam.vercel.app/"
+        className={styles.card}
+      >
+        <h3>Home</h3>
+      </a>
       {page < 5 ? (
         <Link href={`/james/${page + 1}`}>
           <a className={styles.card}>
