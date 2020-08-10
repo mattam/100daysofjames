@@ -35,6 +35,10 @@ export default function Home() {
             Adjusting the navigation to make it easier to browse the passage.
           </p>
         </a>
+        <hr />
+        <Link href="/james/1">
+          <a>Developer Link to the first chapter</a>
+        </Link>
       </main>
     </div>
   );
