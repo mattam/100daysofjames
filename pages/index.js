@@ -19,15 +19,21 @@ export default function Home() {
 
         <a
           href="https://100daysofjames-git-matt-day1.mattam.vercel.app/james/1"
-          className={styles.card}
+          className={styles.dayLink}
         >
           <h3>Day 1 &rarr;</h3>
+          <p>
+            Setting up initial experiment to display the 5 chapters of James
+          </p>
         </a>
         <a
           href="https://100daysofjames-git-matt-day2.mattam.vercel.app/james/1"
-          className={styles.card}
+          className={styles.dayLink}
         >
           <h3>Day 2 &rarr;</h3>
+          <p>
+            Adjusting the navigation to make it easier to browse the passage.
+          </p>
         </a>
       </main>
     </div>
