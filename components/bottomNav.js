@@ -7,24 +7,28 @@ export default function BottomNav(props) {
     <div className={styles.bottomNav}>
       {page > 1 ? (
         <Link href={`/james/${page - 1}`}>
-          <a className={styles.card}>
+          <a className={styles.navButton}>
             <h3>Prev &larr;</h3>
           </a>
         </Link>
-      ) : null}
+      ) : (
+        <div className={styles.navButton}></div>
+      )}
       <a
         href="https://100daysofjames-git-master.mattam.vercel.app/"
-        className={styles.card}
+        className={styles.navButton}
       >
         <h3>Home</h3>
       </a>
       {page < 5 ? (
         <Link href={`/james/${page + 1}`}>
-          <a className={styles.card}>
+          <a className={styles.navButton}>
             <h3>Next &rarr;</h3>
           </a>
         </Link>
-      ) : null}
+      ) : (
+        <div className={styles.navButton}></div>
+      )}
     </div>
   );
 }
