@@ -8,19 +8,19 @@ export default function BottomNav(props) {
       {page > 1 ? (
         <Link href={`/james/${page - 1}`}>
           <a className={styles.card}>
-            <h3>Back &larr;</h3>
+            <h3>Prev &larr;</h3>
           </a>
         </Link>
       ) : null}
       <Link href="/">
         <a className={styles.card}>
-          <h3>Home &larr;</h3>
+          <h3>Home</h3>
         </a>
       </Link>
       {page < 5 ? (
         <Link href={`/james/${page + 1}`}>
           <a className={styles.card}>
-            <h3>Forward &rarr;</h3>
+            <h3>Next &rarr;</h3>
           </a>
         </Link>
       ) : null}
