@@ -23,6 +23,12 @@ export default function Home() {
         >
           <h3>Day 1 &rarr;</h3>
         </a>
+        <a
+          href="https://100daysofjames-git-matt-day2.mattam.vercel.app/james/1"
+          className={styles.card}
+        >
+          <h3>Day 2 &rarr;</h3>
+        </a>
       </main>
     </div>
   );
