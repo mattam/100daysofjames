@@ -36,9 +36,16 @@ export default function Home() {
           </p>
         </a>
         <hr />
-        <Link href="/james/1">
-          <a>Developer Link to the first chapter</a>
-        </Link>
+        <ul>
+          <li>
+            <Link href="/james/1">
+              <a>Developer Link to the first chapter</a>
+            </Link>
+          </li>
+          <li>
+            <a href="https://github.com/mattam/100daysofjames">Github Repo</a>
+          </li>
+        </ul>
       </main>
     </div>
   );
