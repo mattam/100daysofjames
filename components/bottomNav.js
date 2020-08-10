@@ -14,10 +14,7 @@ export default function BottomNav(props) {
       ) : (
         <div className={styles.navButton}></div>
       )}
-      <a
-        href="https://100daysofjames-git-master.mattam.vercel.app/"
-        className={styles.navButton}
-      >
+      <a href="https://100daysofjames.vercel.app" className={styles.navButton}>
         <h3>Home</h3>
       </a>
       {page < 5 ? (
