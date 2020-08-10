@@ -18,7 +18,7 @@ export default function Home() {
         </p>
 
         <a
-          href="https://100daysofjames-git-matt-testvercelbuild.mattam.vercel.app/james/1"
+          href="https://100daysofjames-git-matt-day1.mattam.vercel.app/james/1"
           className={styles.card}
         >
           <h3>Day 1 &rarr;</h3>
