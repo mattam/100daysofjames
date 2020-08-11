@@ -76,11 +76,17 @@
   width: 500px;
 }
 
+.bottomNavSpacer {
+  width: 200px;
+  height: 200px;
+}
+
 .navButton {
   margin: 1rem;
   padding: 1.5rem;
   width: 200px;
   text-decoration: none;
+  background: white;
   text-align: left;
   border: 1px solid #eaeaea;
   border-radius: 10px;
