@@ -3,7 +3,7 @@
   padding: 0 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -68,9 +68,60 @@
   line-height: 1.3rem;
 }
 
+.bottomNavContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .bottomNav {
   display: flex;
   flex-direction: row;
+  position: fixed;
+  bottom: 0;
+  width: 500px;
+}
+
+.bottomNavSpacer {
+  width: 200px;
+  height: 200px;
+}
+
+.navButton {
+  margin: 1rem;
+  padding: 1.5rem;
+  width: 200px;
+  text-decoration: none;
+  background: white;
+  text-align: left;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.navButton:hover,
+.navButton:focus,
+.navButton:active {
+  color: #0070f3;
+  border-color: #0070f3;
+}
+
+.dayLink {
+  margin: 1rem;
+  padding: 1.5rem;
+  width: 500px;
+  text-decoration: none;
+  text-align: left;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.dayLink:hover,
+.dayLink:focus,
+.dayLink:active {
+  color: #0070f3;
+  border-color: #0070f3;
 }
 
 .code {
