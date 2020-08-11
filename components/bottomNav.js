@@ -3,34 +3,30 @@ import Link from "next/link";
 
 export default function BottomNav(props) {
   const { page } = props;
+  const hiddenStyle = styles.navCircle + " " + styles.navButtonHidden;
+  const leftStyle = page > 1 ? styles.navCircle : hiddenStyle;
+  const rightStyle = page < 5 ? styles.navCircle : hiddenStyle;
+
   return (
     <div className={styles.bottomNavContainer}>
       <div className={styles.bottomNavSpacer}></div>
       <div className={styles.bottomNav}>
-        {page > 1 ? (
-          <Link href={`/james/${page - 1}`}>
-            <a className={styles.navButton}>
-              <h3>Prev &larr;</h3>
-            </a>
-          </Link>
-        ) : (
-          <div className={styles.navButton}></div>
-        )}
+        <Link href={`/james/${page - 1}`}>
+          <a className={leftStyle}>
+            <h3>&larr;</h3>
+          </a>
+        </Link>
         <a
           href="https://100daysofjames.vercel.app"
-          className={styles.navButton}
+          className={styles.navCircle}
         >
-          <h3>Home</h3>
+          <h3>&uarr;</h3>
         </a>
-        {page < 5 ? (
-          <Link href={`/james/${page + 1}`}>
-            <a className={styles.navButton}>
-              <h3>Next &rarr;</h3>
-            </a>
-          </Link>
-        ) : (
-          <div className={styles.navButton}></div>
-        )}
+        <Link href={`/james/${page + 1}`}>
+          <a className={rightStyle}>
+            <h3>&rarr;</h3>
+          </a>
+        </Link>
       </div>
     </div>
   );
