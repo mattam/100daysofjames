@@ -19,7 +19,10 @@ const renderDay = (day) => {
 const renderDevLink = () => {
   return (
     <Link href="/james/1">
-      <a>Developer Link to the first chapter</a>
+      <a className={styles.dayLink}>
+        <h3>Today &rarr;</h3>
+        <p>Development Link for today</p>
+      </a>
     </Link>
   );
 };
@@ -49,12 +52,12 @@ export default function Home() {
           Read through James and experiment with ways of learning it
         </p>
 
+        {process.env.NODE_ENV === "development" && renderDevLink()}
+
         {days
           .slice(0)
           .reverse()
           .map((day) => renderDay(day))}
-
-        {process.env.NODE_ENV && renderDevLink()}
       </main>
     </div>
   );

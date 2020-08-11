@@ -6,7 +6,10 @@ export default function BottomNav(props) {
   const hiddenStyle = styles.navCircle + " " + styles.navButtonHidden;
   const leftStyle = page > 1 ? styles.navCircle : hiddenStyle;
   const rightStyle = page < 5 ? styles.navCircle : hiddenStyle;
-
+  const homeLink =
+    process.env.NODE_ENV === "development"
+      ? "/"
+      : "https://100daysofjames.vercel.app";
   return (
     <div className={styles.bottomNavContainer}>
       <div className={styles.bottomNavSpacer}></div>
@@ -16,10 +19,7 @@ export default function BottomNav(props) {
             <h3>&larr;</h3>
           </a>
         </Link>
-        <a
-          href="https://100daysofjames.vercel.app"
-          className={styles.navCircle}
-        >
+        <a href={homeLink} className={styles.navCircle}>
           <h3>&uarr;</h3>
         </a>
         <Link href={`/james/${page + 1}`}>
