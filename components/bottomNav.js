@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function BottomNav(props) {
   const { page } = props;
   return (
-    <div>
+    <div className={styles.bottomNavContainer}>
       <div className={styles.bottomNavSpacer}></div>
       <div className={styles.bottomNav}>
         {page > 1 ? (
