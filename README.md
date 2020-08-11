@@ -6,11 +6,17 @@ I'll attempt to build out ideas and tooling around reading the book of James ove
 
 You can access the most recent demo at: [https://100daysofjames.vercel.app/](https://100daysofjames.vercel.app/)
 
-Each day's experiments are linked to the PR for that day.
+Each day's experiments are linked to the preview build for that day.
 
 ## Running this locally
 
-First, run the development server:
+First, install the dependencies:
+
+```bash
+yarn
+```
+
+Second, run the development server:
 
 ```bash
 yarn dev
