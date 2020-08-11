@@ -16,6 +16,24 @@ const renderDay = (day) => {
   );
 };
 
+const renderDevLink = () => {
+  return (
+    <Link href="/james/1">
+      <a>Developer Link to the first chapter</a>
+    </Link>
+  );
+};
+
+const renderTopNav = () => {
+  return (
+    <div className={styles.topNav}>
+      <a href="https://github.com/mattam/100daysofjames">
+        <img src="/github-logo.png" alt="github repo" />
+      </a>
+    </div>
+  );
+};
+
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -23,7 +41,7 @@ export default function Home() {
         <title>#100DaysofJames</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      {renderTopNav()}
       <main className={styles.main}>
         <h1 className={styles.title}>#100daysofJames</h1>
 
@@ -36,16 +54,7 @@ export default function Home() {
           .reverse()
           .map((day) => renderDay(day))}
 
-        <ul>
-          <li>
-            <Link href="/james/1">
-              <a>Developer Link to the first chapter</a>
-            </Link>
-          </li>
-          <li>
-            <a href="https://github.com/mattam/100daysofjames">Github Repo</a>
-          </li>
-        </ul>
+        {process.env.NODE_ENV && renderDevLink()}
       </main>
     </div>
   );
