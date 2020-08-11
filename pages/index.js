@@ -1,6 +1,20 @@
 import Head from "next/head";
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
+import days from "../data/days.json";
+
+const renderDay = (day) => {
+  return (
+    <a
+      key={day.dayNum}
+      href={`https://100daysofjames-git-matt-day${day.dayNum}.mattam.vercel.app/james/1`}
+      className={styles.dayLink}
+    >
+      <h3>Day {day.dayNum} &rarr;</h3>
+      <p>{day.description}</p>
+    </a>
+  );
+};
 
 export default function Home() {
   return (
@@ -17,25 +31,11 @@ export default function Home() {
           Read through James and experiment with ways of learning it
         </p>
 
-        <a
-          href="https://100daysofjames-git-matt-day1.mattam.vercel.app/james/1"
-          className={styles.dayLink}
-        >
-          <h3>Day 1 &rarr;</h3>
-          <p>
-            Setting up initial experiment to display the 5 chapters of James
-          </p>
-        </a>
-        <a
-          href="https://100daysofjames-git-matt-day2.mattam.vercel.app/james/1"
-          className={styles.dayLink}
-        >
-          <h3>Day 2 &rarr;</h3>
-          <p>
-            Adjusting the navigation to make it easier to browse the passage.
-          </p>
-        </a>
-        <hr />
+        {days
+          .slice(0)
+          .reverse()
+          .map((day) => renderDay(day))}
+
         <ul>
           <li>
             <Link href="/james/1">

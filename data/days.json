@@ -1,0 +1,14 @@
+[
+  {
+    "dayNum": 1,
+    "description": "Setting up initial experiement to display the 5 chapters of James"
+  },
+  {
+    "dayNum": 2,
+    "description": "Adjusting the navigation to make it easier to browse the passage"
+  },
+  {
+    "dayNum": 3,
+    "description": "Loading in data through json and reversing the day order"
+  }
+]
