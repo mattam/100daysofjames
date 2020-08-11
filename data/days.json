@@ -9,6 +9,6 @@
   },
   {
     "dayNum": 3,
-    "description": "Loading in data through json and reversing the day order"
+    "description": "Loading in day data through json and reversing the day order"
   }
 ]
