@@ -10,5 +10,9 @@
   {
     "dayNum": 3,
     "description": "Loading in day data through json and reversing the day order. Also some more development fixes to make my life easier"
+  },
+  {
+    "dayNum": 4,
+    "description": "Try to hit up the .NET bible API for the per verse json"
   }
 ]
