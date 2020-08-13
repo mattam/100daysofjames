@@ -1,7 +1,7 @@
 [
   {
     "dayNum": 1,
-    "description": "Setting up initial experiement to display the 5 chapters of James"
+    "description": "Setting up initial experiment to display the 5 chapters of James"
   },
   {
     "dayNum": 2,
@@ -10,5 +10,9 @@
   {
     "dayNum": 3,
     "description": "Loading in day data through json and reversing the day order. Also some more development fixes to make my life easier"
+  },
+  {
+    "dayNum": 4,
+    "description": "Hit up the .NET bible API for the per verse json"
   }
 ]
