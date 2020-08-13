@@ -1,4 +1,4 @@
-import renderPassage from "../../components/passage";
+import Passage from "../../components/passage";
 
 const chapterNum = 4;
 
@@ -17,5 +17,5 @@ export async function getStaticProps() {
 
 export default function James4({ rawVerses }) {
   const verses = JSON.parse(rawVerses);
-  return renderPassage(verses, chapterNum);
+  return Passage(verses, chapterNum);
 }
