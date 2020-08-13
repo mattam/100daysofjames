@@ -1,7 +1,11 @@
+import { useContext } from "react";
 import styles from "../styles/Home.module.css";
+import TopNav from "../components/topNav";
 import BottomNav from "./bottomNav";
+import { SettingsContext } from "../data/settingsContext";
 
 function renderVerse(verse) {
+  const [settings, setSettings] = useContext(SettingsContext);
   let hasPara = false;
   if (verse.text.includes(`<p class="bodytext">`)) {
     verse.text = verse.text.replace('<p class="bodytext">', "");
@@ -20,8 +24,11 @@ function renderVerse(verse) {
   }
 
   return (
-    <span key={verse.verse}>
+    <span key={verse.chapter + verse.verse}>
       {verse.title && <h3>{verse.title}</h3>}
+      {settings.showVerseNum && (
+        <sup className={styles.superscript}>{verse.verse}</sup>
+      )}
       {/* extra space after verse.text for spaces between verses */}
       <span>{verse.text} </span>
       {/* H3 to create paragraph indent */}
@@ -30,9 +37,10 @@ function renderVerse(verse) {
   );
 }
 
-export default function renderPassage(verses, chapterNum) {
+export default function Passage(verses, chapterNum) {
   return (
     <div className={styles.container}>
+      <TopNav />
       <div className={styles.passage}>
         <h1>James {chapterNum}</h1>
         {verses.map((verse) => renderVerse(verse))}
