@@ -11,10 +11,20 @@ function renderVerse(verse) {
     hasPara = true;
   }
 
+  // [TODO] I don't want to deal with the bold tags right now
+  if (verse.text.includes(`<b>`)) {
+    verse.text = verse.text.replace(/\<b\>/g, "");
+  }
+  if (verse.text.includes(`</b>`)) {
+    verse.text = verse.text.replace(/\<\/b\>/g, "");
+  }
+
   return (
     <span key={verse.verse}>
       {verse.title && <h3>{verse.title}</h3>}
+      {/* extra space after verse.text for spaces between verses */}
       <span>{verse.text} </span>
+      {/* H3 to create paragraph indent */}
       {hasPara && <h3></h3>}
     </span>
   );

@@ -15,7 +15,7 @@ export async function getStaticProps() {
   };
 }
 
-export default function James1({ rawVerses }) {
+export default function James2({ rawVerses }) {
   const verses = JSON.parse(rawVerses);
   return renderPassage(verses, chapterNum);
 }
