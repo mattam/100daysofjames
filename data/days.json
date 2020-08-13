@@ -14,5 +14,9 @@
   {
     "dayNum": 4,
     "description": "Hit up the .NET bible API for the per verse json"
+  },
+  {
+    "dayNum": 5,
+    "description": "Adding in verse numbers"
   }
 ]

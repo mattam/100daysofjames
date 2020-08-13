@@ -22,6 +22,7 @@ function renderVerse(verse) {
   return (
     <span key={verse.verse}>
       {verse.title && <h3>{verse.title}</h3>}
+      <sup className={styles.superscript}>{verse.verse}</sup>
       {/* extra space after verse.text for spaces between verses */}
       <span>{verse.text} </span>
       {/* H3 to create paragraph indent */}
