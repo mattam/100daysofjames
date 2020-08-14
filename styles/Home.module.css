@@ -1,10 +1,11 @@
 .container {
-  min-height: 100vh;
+  width: 100vw;
   padding: 0 1rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  font-size: 1rem;
 }
 
 .main {
@@ -65,7 +66,7 @@
 .passage {
   max-width: 40rem;
   text-align: left;
-  line-height: 1.3rem;
+  line-height: 1.9rem;
   z-index: 10;
 }
 
@@ -75,7 +76,7 @@
 }
 
 .topNav {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   padding: 2rem;
@@ -202,7 +203,15 @@
   height: 1em;
 }
 
-@media (max-width: 600px) {
+@media only screen and (min-width: 851px) {
+  .container {
+    font-size: 1.2rem;
+  }
+
+  .passage {
+    line-height: 2.5rem;
+  }
+
   .grid {
     width: 100%;
     flex-direction: column;

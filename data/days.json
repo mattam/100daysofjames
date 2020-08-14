@@ -5,18 +5,27 @@
   },
   {
     "dayNum": 2,
-    "description": "Adjusting the navigation to make it easier to browse the passage"
+    "description": "Adjusting the navigation to make it easier to browse the passage",
+    "pr": 3
   },
   {
     "dayNum": 3,
-    "description": "Loading in day data through json and reversing the day order. Also some more development fixes to make my life easier"
+    "description": "Loading in day data through json and reversing the day order. Also some more development fixes to make my life easier",
+    "pr": 7
   },
   {
     "dayNum": 4,
-    "description": "Hit up the .NET bible API for the per verse json"
+    "description": "Hit up the .NET bible API for the per verse json",
+    "pr": 10
   },
   {
     "dayNum": 5,
-    "description": "Adding in verse numbers, and ability to toggle them"
+    "description": "Adding in verse numbers, and ability to toggle them",
+    "pr": 11
+  },
+  {
+    "dayNum": 6,
+    "description": "Fixing toggle button and mobile view",
+    "pr": 12
   }
 ]
