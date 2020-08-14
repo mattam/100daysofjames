@@ -25,7 +25,7 @@
   },
   {
     "dayNum": 6,
-    "description": "Fixing toggle button, adding in PR links to the days",
+    "description": "Fixing toggle button and mobile view",
     "pr": 12
   }
 ]
