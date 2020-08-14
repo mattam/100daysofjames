@@ -1,11 +1,11 @@
 .container {
-  width: 100vh;
+  width: 100vw;
   padding: 0 1rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  font-size: 40px;
+  font-size: 1rem;
 }
 
 .main {
@@ -66,7 +66,7 @@
 .passage {
   max-width: 40rem;
   text-align: left;
-  line-height: 5rem;
+  line-height: 1.9rem;
   z-index: 10;
 }
 
@@ -106,8 +106,8 @@
 }
 
 .navCircle {
-  height: 100px;
-  width: 100px;
+  height: 50px;
+  width: 50px;
   background: white;
   border: 1px solid #eaeaea;
   border-radius: 50%;
@@ -206,11 +206,6 @@
 @media only screen and (min-width: 851px) {
   .container {
     font-size: 1.2rem;
-  }
-
-  .navCircle {
-    height: 50px;
-    width: 50px;
   }
 
   .passage {
