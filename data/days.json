@@ -27,5 +27,10 @@
     "dayNum": 6,
     "description": "Fixing toggle button and mobile view",
     "pr": 12
+  },
+  {
+    "dayNum": 7,
+    "description": "Adding in sidebar for additional information",
+    "pr": 13
   }
 ]
