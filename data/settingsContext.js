@@ -5,6 +5,7 @@ const SettingsContext = React.createContext([{}, () => {}]);
 const SettingsProvider = (props) => {
   const [state, setState] = useState({
     showVerseNum: true,
+    showInfo: false,
   });
   return (
     <SettingsContext.Provider value={[state, setState]}>
