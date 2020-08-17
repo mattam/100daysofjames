@@ -32,5 +32,10 @@
     "dayNum": 7,
     "description": "Adding in Google Analytics",
     "pr": 16
+  },
+  {
+    "dayNum": 8,
+    "description": "Adding in an info panel",
+    "pr": 18
   }
 ]

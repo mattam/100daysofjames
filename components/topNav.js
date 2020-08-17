@@ -11,6 +11,17 @@ export default function TopNav() {
         onClick={() => {
           setSettings((settings) => ({
             ...settings,
+            showInfo: !settings.showInfo,
+          }));
+        }}
+      >
+        <h2>i</h2>
+      </div>
+      <div
+        className={styles.navCircle}
+        onClick={() => {
+          setSettings((settings) => ({
+            ...settings,
             showVerseNum: !settings.showVerseNum,
           }));
         }}
