@@ -37,5 +37,10 @@
     "dayNum": 8,
     "description": "Adding in an info panel",
     "pr": 18
+  },
+  {
+    "dayNum": 9,
+    "description": "Fixing day list mobile view",
+    "pr": 18
   }
 ]
