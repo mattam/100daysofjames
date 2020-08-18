@@ -9,6 +9,7 @@
 }
 
 .main {
+  width: 100%;
   padding: 5rem 0;
   flex: 1;
   display: flex;
@@ -50,7 +51,7 @@
 .title {
   margin: 0;
   line-height: 1.15;
-  font-size: 4rem;
+  font-size: 2rem;
 }
 
 .title,
@@ -139,7 +140,8 @@
 .dayLink {
   margin: 1rem;
   padding: 1.5rem;
-  width: 500px;
+  max-width: 500px;
+  width: 80%;
   text-decoration: none;
   text-align: left;
   border: 1px solid #eaeaea;
@@ -214,6 +216,10 @@
 
   .passage {
     line-height: 2.5rem;
+  }
+
+  .title {
+    font-size: 4rem;
   }
 
   .grid {
