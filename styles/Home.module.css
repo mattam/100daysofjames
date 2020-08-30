@@ -129,6 +129,21 @@
   z-index: 20;
 }
 
+.navCircleHighlight {
+  height: 50px;
+  width: 50px;
+  background: #F6D477;
+  border: 1px solid #eaeaea;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  box-shadow: 0 11px 40px 0 rgba(0, 0, 0, 0.25),
+    0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  z-index: 20;
+}
+
 .navCircle:hover,
 .navCircle:focus,
 .navCircle:active {
