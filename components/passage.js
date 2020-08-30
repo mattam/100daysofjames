@@ -4,27 +4,6 @@ import TopNav from "../components/topNav";
 import BottomNav from "./bottomNav";
 import { SettingsContext } from "../data/settingsContext";
 
-const highlights = {
-  "James-1-2": {
-    note: "something"
-  },
-  "James-1-4": {
-    note: "Another thing"
-  }
-}
-
-/*
-      <div
-        className={styles.navCircle}
-        onClick={() => {
-          setSettings((settings) => ({
-            ...settings,
-            showInfo: !settings.showInfo,
-          }));
-        }}
-      >
-*/
-
 function toggleHighlight(key, settings, setSettings) {
   let tempHighlights = settings.highlights;
 
@@ -50,7 +29,6 @@ function renderHighlight(verse) {
   }
 
   return <span onClick={() => toggleHighlight(key, settings, setSettings)}>{verse.text}</span>;
-  
 }
 
 function renderVerse(verse) {
