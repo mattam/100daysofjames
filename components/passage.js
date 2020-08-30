@@ -26,13 +26,19 @@ const highlights = {
 */
 
 function toggleHighlight(key, settings, setSettings) {
+  let tempHighlights = settings.highlights;
 
-    let tempHighlights = settings.highlights;
+  if (tempHighlights[key]) {
+    delete tempHighlights[key]
+  } else {
     tempHighlights[key] = { note: "temp"};
-    setSettings((settings) => ({
-      ...settings,
-      highlights: tempHighlights
-    }))
+  }
+
+  setSettings((settings) => ({
+    ...settings,
+    highlights: tempHighlights
+  }))
+
 }
 
 function renderHighlight(verse) {
