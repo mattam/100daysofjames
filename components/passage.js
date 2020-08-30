@@ -4,6 +4,34 @@ import TopNav from "../components/topNav";
 import BottomNav from "./bottomNav";
 import { SettingsContext } from "../data/settingsContext";
 
+const highlights = {
+  "James-1-2": {
+    note: "something"
+  },
+  "James-1-4": {
+    note: "Another thing"
+  }
+}
+
+function renderHighlight(verse) {
+  // take in verse, 
+  // load up highlights file
+  // parse if it's the right book/chapter/verse
+  // if it is, then apply a <span className="highlight"></span> around it
+  // dump it back out
+
+  // generate key
+  const key = `${verse.bookname}-${verse.chapter}-${verse.verse}`;
+  console.log('key: ', key);
+  if (highlights[key]) {
+    console.log('found highlight: ', highlights[key].note);
+    return <span className={styles.highlight}>{verse.text}</span>;
+  }
+
+  return verse.text;
+  
+}
+
 function renderVerse(verse) {
   const [settings, setSettings] = useContext(SettingsContext);
   let hasPara = false;
@@ -30,7 +58,7 @@ function renderVerse(verse) {
         <sup className={styles.superscript}>{verse.verse}</sup>
       )}
       {/* extra space after verse.text for spaces between verses */}
-      <span>{verse.text} </span>
+      <span>{renderHighlight(verse)} </span>
       {/* H3 to create paragraph indent */}
       {hasPara && <h3></h3>}
     </span>
