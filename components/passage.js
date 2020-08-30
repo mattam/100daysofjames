@@ -1,4 +1,4 @@
-import { useContext, useCallback } from "react";
+import { useContext } from "react";
 import styles from "../styles/Home.module.css";
 import TopNav from "../components/topNav";
 import BottomNav from "./bottomNav";
