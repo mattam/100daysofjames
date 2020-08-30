@@ -6,6 +6,8 @@ const SettingsProvider = (props) => {
   const [state, setState] = useState({
     showVerseNum: true,
     showInfo: false,
+    showHighlights: false,
+    highlights: {},
   });
   return (
     <SettingsContext.Provider value={[state, setState]}>

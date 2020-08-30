@@ -4,6 +4,33 @@ import TopNav from "../components/topNav";
 import BottomNav from "./bottomNav";
 import { SettingsContext } from "../data/settingsContext";
 
+function toggleHighlight(key, settings, setSettings) {
+  let tempHighlights = settings.highlights;
+
+  if (tempHighlights[key]) {
+    delete tempHighlights[key]
+  } else {
+    tempHighlights[key] = { note: "temp"};
+  }
+
+  setSettings((settings) => ({
+    ...settings,
+    highlights: tempHighlights
+  }))
+
+}
+
+function renderHighlight(verse) {
+  const [settings, setSettings] = useContext(SettingsContext);
+  const key = `${verse.bookname}-${verse.chapter}-${verse.verse}`;
+
+  if (settings.showHighlights && settings.highlights[key]) {
+    return <span onClick={() => toggleHighlight(key, settings, setSettings)} className={styles.highlight}>{verse.text}</span>;
+  }
+
+  return <span onClick={() => toggleHighlight(key, settings, setSettings)}>{verse.text}</span>;
+}
+
 function renderVerse(verse) {
   const [settings, setSettings] = useContext(SettingsContext);
   let hasPara = false;
@@ -30,7 +57,7 @@ function renderVerse(verse) {
         <sup className={styles.superscript}>{verse.verse}</sup>
       )}
       {/* extra space after verse.text for spaces between verses */}
-      <span>{verse.text} </span>
+      <span>{renderHighlight(verse)} </span>
       {/* H3 to create paragraph indent */}
       {hasPara && <h3></h3>}
     </span>
