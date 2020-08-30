@@ -42,5 +42,10 @@
     "dayNum": 9,
     "description": "Fixing day list mobile view",
     "pr": 19
+  },
+  {
+    "dayNum": 10,
+    "description": "Adding feature to toggle per-verse highlight",
+    "pr": 20
   }
 ]
