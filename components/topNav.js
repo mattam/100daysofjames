@@ -28,6 +28,17 @@ export default function TopNav() {
       >
         <h2>#</h2>
       </div>
+      <div
+        className={styles.navCircle}
+        onClick={() => {
+          setSettings((settings) => ({
+            ...settings,
+            showHighlights: !settings.showHighlights,
+          }));
+        }}
+      >
+        <h2>h</h2>
+      </div>      
     </div>
   );
 }

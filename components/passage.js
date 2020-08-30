@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useCallback } from "react";
 import styles from "../styles/Home.module.css";
 import TopNav from "../components/topNav";
 import BottomNav from "./bottomNav";
@@ -13,22 +13,37 @@ const highlights = {
   }
 }
 
-function renderHighlight(verse) {
-  // take in verse, 
-  // load up highlights file
-  // parse if it's the right book/chapter/verse
-  // if it is, then apply a <span className="highlight"></span> around it
-  // dump it back out
+/*
+      <div
+        className={styles.navCircle}
+        onClick={() => {
+          setSettings((settings) => ({
+            ...settings,
+            showInfo: !settings.showInfo,
+          }));
+        }}
+      >
+*/
 
-  // generate key
+function toggleHighlight(key, settings, setSettings) {
+
+    let tempHighlights = settings.highlights;
+    tempHighlights[key] = { note: "temp"};
+    setSettings((settings) => ({
+      ...settings,
+      highlights: tempHighlights
+    }))
+}
+
+function renderHighlight(verse) {
+  const [settings, setSettings] = useContext(SettingsContext);
   const key = `${verse.bookname}-${verse.chapter}-${verse.verse}`;
-  console.log('key: ', key);
-  if (highlights[key]) {
-    console.log('found highlight: ', highlights[key].note);
-    return <span className={styles.highlight}>{verse.text}</span>;
+
+  if (settings.showHighlights && settings.highlights[key]) {
+    return <span onClick={() => toggleHighlight(key, settings, setSettings)} className={styles.highlight}>{verse.text}</span>;
   }
 
-  return verse.text;
+  return <span onClick={() => toggleHighlight(key, settings, setSettings)}>{verse.text}</span>;
   
 }
 
