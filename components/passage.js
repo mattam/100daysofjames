@@ -36,12 +36,15 @@ function renderHighlight(verse) {
       </span>
     );
   }
+  if (settings.showHighlights) {
+    return (
+      <span onClick={() => toggleHighlight(key, settings, setSettings)}>
+        {verse.text}
+      </span>
+    );
+  }
 
-  return (
-    <span onClick={() => toggleHighlight(key, settings, setSettings)}>
-      {verse.text}
-    </span>
-  );
+  return <span>{verse.text}</span>;
 }
 
 function renderVerse(verse) {
