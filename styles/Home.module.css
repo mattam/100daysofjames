@@ -78,7 +78,13 @@
 }
 
 .highlight {
-  background:#F6D477;
+  background: #f6d477;
+}
+
+.note {
+  display: block;
+  border: 1px solid #ccc;
+  padding: 1rem;
 }
 
 .topNav {
@@ -132,7 +138,7 @@
 .navCircleHighlight {
   height: 50px;
   width: 50px;
-  background: #F6D477;
+  background: #f6d477;
   border: 1px solid #eaeaea;
   border-radius: 50%;
   display: flex;
@@ -233,8 +239,19 @@
     font-size: 1.2rem;
   }
 
-  .passage {
+  .wrapper {
     line-height: 2.5rem;
+    display: grid;
+    grid-template-columns: 50px 40rem 50px;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "topnav topnav topnav"
+      ". passage info"
+      "footer footer footer";
+  }
+
+  .passage {
+    grid-area: passage;
   }
 
   .title {
@@ -244,5 +261,15 @@
   .grid {
     width: 100%;
     flex-direction: column;
+  }
+
+  .note {
+    display: block;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    float: right;
+    margin-right: -50%;
+    margin-top: -3rem;
+    width: 50%;
   }
 }
