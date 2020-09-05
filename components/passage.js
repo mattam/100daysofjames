@@ -8,16 +8,15 @@ function toggleHighlight(key, settings, setSettings) {
   let tempHighlights = settings.highlights;
 
   if (tempHighlights[key]) {
-    delete tempHighlights[key]
+    delete tempHighlights[key];
   } else {
-    tempHighlights[key] = { note: "temp"};
+    tempHighlights[key] = { note: "temp" };
   }
 
   setSettings((settings) => ({
     ...settings,
-    highlights: tempHighlights
-  }))
-
+    highlights: tempHighlights,
+  }));
 }
 
 function renderHighlight(verse) {
@@ -25,10 +24,27 @@ function renderHighlight(verse) {
   const key = `${verse.bookname}-${verse.chapter}-${verse.verse}`;
 
   if (settings.showHighlights && settings.highlights[key]) {
-    return <span onClick={() => toggleHighlight(key, settings, setSettings)} className={styles.highlight}>{verse.text}</span>;
+    return (
+      <span>
+        <span
+          onClick={() => toggleHighlight(key, settings, setSettings)}
+          className={styles.highlight}
+        >
+          {verse.text}
+        </span>
+        <span className={styles.note}>{settings.highlights[key].note}</span>
+      </span>
+    );
+  }
+  if (settings.showHighlights) {
+    return (
+      <span onClick={() => toggleHighlight(key, settings, setSettings)}>
+        {verse.text}
+      </span>
+    );
   }
 
-  return <span onClick={() => toggleHighlight(key, settings, setSettings)}>{verse.text}</span>;
+  return <span>{verse.text}</span>;
 }
 
 function renderVerse(verse) {
@@ -102,10 +118,12 @@ export default function Passage(verses, chapterNum) {
   return (
     <div className={styles.container}>
       <TopNav />
-      <div className={styles.passage}>
+      <div className={styles.wrapper}>
         <InfoPanel />
-        <h1>James {chapterNum}</h1>
-        {verses.map((verse) => renderVerse(verse))}
+        <div className={styles.passage}>
+          <h1>James {chapterNum}</h1>
+          {verses.map((verse) => renderVerse(verse))}
+        </div>
       </div>
       <BottomNav page={chapterNum} />
     </div>
