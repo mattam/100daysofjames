@@ -57,5 +57,10 @@
     "dayNum": 11,
     "description": "Adding in display of highlight notes on the side",
     "pr": 22
+  },
+  {
+    "dayNum": 12,
+    "description": "Refactoring the historical note to the same side",
+    "pr": 23
   }
 ]

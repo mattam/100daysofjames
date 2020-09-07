@@ -242,12 +242,10 @@
   .wrapper {
     line-height: 2.5rem;
     display: grid;
-    grid-template-columns: 50px 40rem 50px;
+    grid-template-columns: 40rem auto;
     grid-template-rows: auto;
-    grid-template-areas:
-      "topnav topnav topnav"
-      ". passage info"
-      "footer footer footer";
+    grid-template-areas: "passage info";
+    width: 100%;
   }
 
   .passage {
@@ -263,13 +261,14 @@
     flex-direction: column;
   }
 
+  .info {
+    padding-top: 8rem;
+  }
+
   .note {
     display: block;
     border: 1px solid #ccc;
     padding: 1rem;
-    float: right;
-    margin-right: -50%;
-    margin-top: -3rem;
-    width: 50%;
+    grid-area: info;
   }
 }

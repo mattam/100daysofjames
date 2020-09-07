@@ -80,49 +80,53 @@ function renderVerse(verse) {
   );
 }
 
-function InfoPanel() {
-  const [settings, setSettings] = useContext(SettingsContext);
-  if (!settings.showInfo) {
-    return null;
-  }
+function renderBookInfo(bookInfo) {
   return (
-    <div className={styles.card}>
-      <h3>Historical background</h3>
-      <p>
-        The writer of this epistle was evidently the half-brother of our Lord
-        Jesus Christ (Gal. 1:19) and the brother of Jude, the writer of the
-        epistle that bears his name (cf. Matt. 13:55). This was the opinion of
-        many of the early church fathers and writers.[1] This James was not the
-        brother of the Apostle John, the son of Zebedee, who suffered martyrdom
-        early in the history of the church (Mark 1:19; Acts 12:2). Neither was
-        he the son of Alphaeus (Mark 3:18) or the father of Judas (Luke 6:16).
-        He was the leading man in the Jerusalem church who spoke at the
-        Jerusalem Council (Acts 15:13-21; cf. 12:17; 21:18; 1 Cor. 15:7).
-      </p>
-      <p>
-        Some commentators believed that the similarities in the Greek of this
-        epistle and James’ speech in Acts 15 support his identification as the
-        writer.[2] The fact that the writer wrote this epistle in very good
-        Greek should not rule this James out. He would have been fluent in both
-        Aramaic and Greek as a gifted Galilean. The recipients of this letter
-        were the Jewish Christians of the Diaspora, Jews who had scattered from
-        Palestine and had come to faith in Christ (1:1). Several Jewish
-        references in the book support the claim that a Jew wrote it to other
-        Jews (e.g., 1:18; 2:2, 21; 3:6; 5:4, 7).
-      </p>
-    </div>
+    <>
+      <h3>{bookInfo.title}</h3>
+      <p>{bookInfo.notes[0]}</p>
+      <p>{bookInfo.notes[1]}</p>
+    </>
   );
 }
 
+function NotesPanel() {
+  // Display all the notes that are available in stacked order
+  // Scroll that note to the top when the corresponding verse is scrolled to the top
+  // [todo] is there a better way of matching scrolling?
+  const [settings, setSettings] = useContext(SettingsContext);
+  console.log("settings.highlights", settings.highlights);
+  return Object.entries(settings.highlights).map(([key, value]) => {
+    console.log("value: ", value);
+    switch (key) {
+      case "bookInfo":
+        return (
+          <div className={styles.card} key={key}>
+            {renderBookInfo(value)}
+          </div>
+        );
+      default:
+        return (
+          <div className={styles.card} key={key}>
+            {value.note}
+          </div>
+        );
+    }
+  });
+}
+
 export default function Passage(verses, chapterNum) {
+  const [settings, setSettings] = useContext(SettingsContext);
   return (
     <div className={styles.container}>
       <TopNav />
       <div className={styles.wrapper}>
-        <InfoPanel />
         <div className={styles.passage}>
           <h1>James {chapterNum}</h1>
           {verses.map((verse) => renderVerse(verse))}
+        </div>
+        <div className={styles.info}>
+          {settings.showInfo ? <NotesPanel /> : null}
         </div>
       </div>
       <BottomNav page={chapterNum} />

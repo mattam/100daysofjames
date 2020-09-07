@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import historical from "./historical.json";
+
 const SettingsContext = React.createContext([{}, () => {}]);
 
 const SettingsProvider = (props) => {
@@ -7,7 +9,7 @@ const SettingsProvider = (props) => {
     showVerseNum: true,
     showInfo: false,
     showHighlights: false,
-    highlights: {},
+    highlights: historical,
   });
   return (
     <SettingsContext.Provider value={[state, setState]}>
