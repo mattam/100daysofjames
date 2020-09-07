@@ -5,14 +5,17 @@ import days from "../data/days.json";
 
 const renderDay = (day) => {
   return (
-    <a
-      key={day.dayNum}
-      href={`https://100daysofjames-git-matt-day${day.dayNum}.mattam.vercel.app/james/1`}
-      className={styles.dayLink}
-    >
-      <h3>Day {day.dayNum} &rarr;</h3>
-      <p>{day.description}</p>
-    </a>
+    <div className={styles.dayLink}>
+      <a
+        key={day.dayNum}
+        href={`https://100daysofjames-git-matt-day${day.dayNum}.mattam.vercel.app/james/1`}
+      >
+        <h3>View Day {day.dayNum} Snapshot&rarr;</h3>
+      </a>
+      <a href={`https://github.com/mattam/100daysofjames/pull/${day.pr}`}>
+        Github PR: {day.description}
+      </a>
+    </div>
   );
 };
 
