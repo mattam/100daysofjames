@@ -95,9 +95,7 @@ function NotesPanel() {
   // Scroll that note to the top when the corresponding verse is scrolled to the top
   // [todo] is there a better way of matching scrolling?
   const [settings, setSettings] = useContext(SettingsContext);
-  console.log("settings.highlights", settings.highlights);
   return Object.entries(settings.highlights).map(([key, value]) => {
-    console.log("value: ", value);
     switch (key) {
       case "bookInfo":
         return (
