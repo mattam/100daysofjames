@@ -49,18 +49,23 @@
     "pr": 20
   },
   {
-    "dayNum": 10,
+    "dayNum": 11,
     "description": "Adding feature to toggle per-verse highlight",
     "pr": 20
   },
   {
-    "dayNum": 11,
+    "dayNum": 12,
     "description": "Adding in display of highlight notes on the side",
     "pr": 22
   },
   {
-    "dayNum": 12,
+    "dayNum": 13,
     "description": "Refactoring the historical note to the same side",
     "pr": 23
+  },
+  {
+    "dayNum": 14,
+    "description": "Adding in links to each day's PR",
+    "pr": 25
   }
 ]

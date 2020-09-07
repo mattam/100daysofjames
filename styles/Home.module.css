@@ -171,14 +171,16 @@
   text-align: left;
   border: 1px solid #eaeaea;
   border-radius: 10px;
+}
+
+.dayLink a {
   transition: color 0.15s ease, border-color 0.15s ease;
 }
 
-.dayLink:hover,
-.dayLink:focus,
-.dayLink:active {
+.dayLink a:hover,
+.dayLink a:focus,
+.dayLink a:active {
   color: #0070f3;
-  border-color: #0070f3;
 }
 
 .code {
