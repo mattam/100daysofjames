@@ -1,7 +1,8 @@
 [
   {
     "dayNum": 1,
-    "description": "Setting up initial experiment to display the 5 chapters of James"
+    "description": "Setting up initial experiment to display the 5 chapters of James",
+    "pr": 1
   },
   {
     "dayNum": 2,
