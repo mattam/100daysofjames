@@ -32,7 +32,6 @@ function renderHighlight(verse) {
         >
           {verse.text}
         </span>
-        <span className={styles.note}>{settings.highlights[key].note}</span>
       </span>
     );
   }
