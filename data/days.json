@@ -68,5 +68,10 @@
     "dayNum": 14,
     "description": "Adding in links to each day's PR",
     "pr": 25
-  }
+  },
+  {
+    "dayNum": 15,
+    "description": "Fixing the note display to only happen on the sidebar",
+    "pr": 28
+  }  
 ]
