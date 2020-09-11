@@ -73,5 +73,10 @@
     "dayNum": 15,
     "description": "Fixing the note display to only happen on the sidebar",
     "pr": 28
+  },
+  {
+    "dayNum": 16,
+    "description": "Adding in input box for the notes",
+    "pr": 29
   }  
 ]
