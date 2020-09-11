@@ -105,7 +105,7 @@ function NotesPanel() {
       default:
         return (
           <div className={styles.card} key={key}>
-            {value.note}
+            <input type="text" />
           </div>
         );
     }
