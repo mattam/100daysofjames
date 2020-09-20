@@ -49,6 +49,8 @@ function renderHighlight(verse) {
 function renderVerse(verse) {
   const [settings, setSettings] = useContext(SettingsContext);
   let hasPara = false;
+  let isFirstVerse = false;
+
   if (verse.text.includes(`<p class="bodytext">`)) {
     verse.text = verse.text.replace('<p class="bodytext">', "");
   }
@@ -65,7 +67,13 @@ function renderVerse(verse) {
     verse.text = verse.text.replace(/\<\/b\>/g, "");
   }
 
+  if (verse.verse === "1") {
+    isFirstVerse = true;
+  }
+
   return (
+    <>
+    {isFirstVerse && <h2> {verse.bookname} {verse.chapter}</h2>}
     <span key={verse.chapter + verse.verse}>
       {verse.title && <h3>{verse.title}</h3>}
       {settings.showVerseNum && (
@@ -76,6 +84,7 @@ function renderVerse(verse) {
       {/* H3 to create paragraph indent */}
       {hasPara && <h3></h3>}
     </span>
+    </>
   );
 }
 
@@ -119,14 +128,12 @@ export default function Passage(verses, chapterNum) {
       <TopNav />
       <div className={styles.wrapper}>
         <div className={styles.passage}>
-          <h1>James {chapterNum}</h1>
           {verses.map((verse) => renderVerse(verse))}
         </div>
         <div className={styles.info}>
           {settings.showInfo ? <NotesPanel /> : null}
         </div>
       </div>
-      <BottomNav page={chapterNum} />
     </div>
   );
 }
