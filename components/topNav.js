@@ -4,8 +4,15 @@ import { SettingsContext } from "../data/settingsContext";
 
 export default function TopNav() {
   const [settings, setSettings] = useContext(SettingsContext);
+  const homeLink =
+    process.env.NODE_ENV === "development"
+      ? "/"
+      : "https://100daysofjames.vercel.app";  
   return (
     <div className={styles.topNav}>
+      <a href={homeLink} className={styles.navCircle}>
+        <h3>&uarr;</h3>
+      </a>
       <div
         className={styles.navCircle}
         onClick={() => {

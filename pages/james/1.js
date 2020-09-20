@@ -4,7 +4,7 @@ const chapterNum = 1;
 
 export async function getStaticProps() {
   const res = await fetch(
-    `https://labs.bible.org/api/?passage=James%20${chapterNum}&type=json&formatting=para`
+    `https://labs.bible.org/api/?passage=James%201-5&type=json&formatting=para`
   );
   const rawVerses = await res.text();
 

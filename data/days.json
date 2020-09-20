@@ -78,5 +78,10 @@
     "dayNum": 16,
     "description": "Adding in input box for the notes",
     "pr": 29
-  }  
+  },
+  {
+    "dayNum": 17,
+    "description": "Changing Bible reading to infinite scroll",
+    "pr": 31
+  }
 ]
