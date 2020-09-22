@@ -83,5 +83,10 @@
     "dayNum": 17,
     "description": "Changing Bible reading to infinite scroll",
     "pr": 31
+  },
+  {
+    "dayNum": 18,
+    "description": "Simplifying the topnav",
+    "pr": 33
   }
 ]

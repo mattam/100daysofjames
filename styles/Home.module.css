@@ -69,7 +69,7 @@
   text-align: left;
   line-height: 1.9rem;
   z-index: 10;
-  padding-top: 8rem;
+  padding-top: 2rem;
 }
 
 .superscript {
@@ -92,10 +92,42 @@
   top: 0;
   right: 0;
   display: flex;
+  flex-direction: row-reverse;
   justify-content: space-between;
   width: 100%;
   padding: 2rem;
   z-index: 20;
+}
+
+.settingsBox {
+  position: fixed;
+  top: 100px;
+  right: 32px;
+  display: flex;
+  padding: 16px;
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 16px;
+  justify-content: left;
+}
+
+.settingsBox ul {
+  padding: 0;
+}
+
+.settingsBox li {
+  list-style: none;
+  padding: 8px;
+}
+
+.settingsBox li:hover {
+  background: #ccc;
+  border-radius: 8px;
+}
+
+.selectedSetting {
+  background: #f6d477;
+  border-radius: 8px;
 }
 
 .bottomNavContainer {
