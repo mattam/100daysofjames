@@ -268,6 +268,10 @@
   height: 1em;
 }
 
+.launcher {
+  display: none;
+}
+
 @media only screen and (min-width: 851px) {
   .container {
     font-size: 1.2rem;
@@ -304,5 +308,19 @@
     border: 1px solid #ccc;
     padding: 1rem;
     grid-area: info;
+  }
+
+  .launcher {
+    display: block;
+    height: 200px;
+    width: 300px;
+    border: 1px solid #222;
+    position: absolute;
+    margin: auto;
+    top: 200px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 16px;
   }
 }
