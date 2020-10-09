@@ -322,5 +322,19 @@
     bottom: 0;
     right: 0;
     border-radius: 16px;
+    padding: 8px;
+    background: white;
+  }
+
+  .launcher input[type="text"] {
+    width: 100%;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;
+  }
+
+  .launcher input[type="text"]:focus {
+    outline: none;
   }
 }

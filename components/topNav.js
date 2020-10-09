@@ -1,7 +1,7 @@
-import { useCallback, useContext, useState } from "react";
+import { useContext, useState } from "react";
+import { useHotkeys } from "react-hotkeys-hook";
 import styles from "../styles/Home.module.css";
 import { SettingsContext } from "../data/settingsContext";
-import useKeyboardShortcut from "../lib/useKeyboardShortcut";
 import Launcher from "./launcher";
 
 export default function TopNav() {
@@ -13,27 +13,10 @@ export default function TopNav() {
       ? "/"
       : "https://100daysofjames.vercel.app";
 
-  const keys = ["Shift", "P"];
-  const escapeKey = ["Esc"];
-
-  const handleKeyboardShortcut = useCallback(
-    (keys) => {
-      setShowMenu((currentShowMenu) => !currentShowMenu);
-      console.log(showMenu);
-    },
-    [setShowMenu]
-  );
-
-  const handleEscapeShortcut = useCallback(
-    (escapeKey) => {
-      Keyboard.dismiss();
-      setShowMenu((currentShowMenu) => !currentShowMenu);
-    },
-    [setShowMenu]
-  );
-
-  useKeyboardShortcut(keys, handleKeyboardShortcut);
-  useKeyboardShortcut(escapeKey, handleEscapeShortcut);
+  useHotkeys("command+p", (event) => {
+    setShowMenu((currentShowMenu) => !currentShowMenu);
+    event.preventDefault();
+  });
 
   return (
     <div className={styles.topNav}>
@@ -45,7 +28,7 @@ export default function TopNav() {
       >
         <h2>&hellip;</h2>
       </div>
-      {showMenu && <Launcher />}
+      {showMenu && <Launcher hideMenu={() => setShowMenu(false)} />}
       {showSettings && (
         <div className={styles.settingsBox}>
           <ul>
