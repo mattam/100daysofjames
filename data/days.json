@@ -98,5 +98,10 @@
     "dayNum": 20,
     "description": "Changing hotkey and iterating on launcher",
     "pr": 36
+  },
+  {
+    "dayNum": 21,
+    "description": "Putting books of Bible in 'TRIE' structure in preparation for autocompletion",
+    "pr": 37
   }
 ]
