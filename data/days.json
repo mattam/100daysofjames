@@ -93,5 +93,10 @@
     "dayNum": 19,
     "description": "Working on quick launcher",
     "pr": 35
+  },
+  {
+    "dayNum": 20,
+    "description": "Changing hotkey and iterating on launcher",
+    "pr": 36
   }
 ]
