@@ -142,7 +142,6 @@ console.log("trie: ", trie);
 
 end = trie.$;
 let words = [];
-let index = 0;
 
 function findAllTrieWords(search, word, cur) {
   console.log("--------------");
@@ -166,6 +165,7 @@ function findAllTrieWords(search, word, cur) {
     }
   }
 }
+
 findAllTrieWords("P", "", trie);
 console.log("find: ", words);
 
