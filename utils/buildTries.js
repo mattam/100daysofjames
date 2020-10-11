@@ -1,4 +1,6 @@
-const rawJSON = require("fs").readFileSync("dict/bibleBookNames.json");
+const fs = require("fs");
+
+const rawJSON = fs.readFileSync("dict/bibleBookNames.json");
 const bookNames = JSON.parse(rawJSON).bookNames.sort();
 let trie = {},
   end = {},
@@ -91,17 +93,17 @@ function finishSuffixes(cur, keepEnd, end) {
 }
 
 // Optimize the structure
-optimize(trie);
+// optimize(trie);
 // Figure out common suffixes
-suffixes(trie, end);
-for (var key in end) {
-  if (end[key].count > 10) {
-    keepEnd[key] = endings.length;
-    endings.push(end[key].obj);
-  }
-}
-// And extract the suffixes
-finishSuffixes(trie, keepEnd, end);
+// suffixes(trie, end);
+// for (var key in end) {
+//   if (end[key].count > 10) {
+//     keepEnd[key] = endings.length;
+//     endings.push(end[key].obj);
+//   }
+// }
+// // And extract the suffixes
+// finishSuffixes(trie, keepEnd, end);
 trie.$ = endings;
 
 function findTrieWord(word, cur) {
@@ -140,7 +142,6 @@ console.log("trie: ", trie);
 
 end = trie.$;
 let words = [];
-let index = 0;
 
 function findAllTrieWords(search, word, cur) {
   console.log("--------------");
@@ -164,5 +165,9 @@ function findAllTrieWords(search, word, cur) {
     }
   }
 }
-findAllTrieWords("R", "", trie);
+
+findAllTrieWords("P", "", trie);
 console.log("find: ", words);
+
+const data = JSON.stringify(trie);
+fs.writeFileSync("dict/bibleNameTrie.json", data);

@@ -103,5 +103,10 @@
     "dayNum": 21,
     "description": "Putting books of Bible in 'TRIE' structure in preparation for autocompletion",
     "pr": 37
+  },
+  {
+    "dayNum": 22,
+    "description": "Making the launcher (CMD-P) do Bible book name autocompletion",
+    "pr": 38
   }
 ]
