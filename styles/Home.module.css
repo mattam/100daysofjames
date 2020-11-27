@@ -336,4 +336,12 @@
   .launcher h4 {
     margin: 8px;
   }
+
+  .launcher h4:hover {
+    background: #bbb;
+  }
+
+  .launcher h4.selected {
+    background: #ccc;
+  }
 }

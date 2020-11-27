@@ -108,5 +108,10 @@
     "dayNum": 22,
     "description": "Making the launcher (CMD-P) do Bible book name autocompletion",
     "pr": 38
+  },
+  {
+    "dayNum": 23,
+    "description": "Adding in hover and clicking logic to the launcher",
+    "pr": 39
   }
 ]

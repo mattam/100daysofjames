@@ -4,6 +4,7 @@ import bibleNameTrie from "../utils/dict/bibleNameTrie.json";
 
 export default function Launcher(props) {
   const [results, setResults] = useState([]);
+  const [selected, setSelected] = useState(0);
 
   function onKeyDown(event) {
     if (event.key === "Escape") {
@@ -40,8 +41,20 @@ export default function Launcher(props) {
     // Display that list
   }
 
+  function handleClick(event, index) {
+    setSelected(index);
+  }
+
   function renderList() {
-    return results.map((word, index) => <h4 key={index}>{word}</h4>);
+    return results.map((word, index) => (
+      <h4
+        className={index === selected && styles.selected}
+        onClick={(event) => handleClick(event, index)}
+        key={index}
+      >
+        {word}
+      </h4>
+    ));
   }
 
   return (
