@@ -111,7 +111,7 @@
   },
   {
     "dayNum": 23,
-    "description": "Adding in hover and clicking logic to the launcher",
+    "description": "Adding in hover and clicking logic to the launcher. Fixing build",
     "pr": 39
   }
 ]
