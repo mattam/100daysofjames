@@ -21,11 +21,9 @@ const renderDay = (day) => {
 
 const renderDevLink = () => {
   return (
-    <Link href="/james/1">
-      <a className={styles.dayLink}>
+    <Link href="/james/1" className={styles.dayLink}>
         <h3>Today &rarr;</h3>
         <p>Development Link for today</p>
-      </a>
     </Link>
   );
 };

@@ -14,18 +14,14 @@ export default function BottomNav(props) {
     <div className={styles.bottomNavContainer}>
       <div className={styles.bottomNavSpacer}></div>
       <div className={styles.bottomNav}>
-        <Link href={`/james/${page - 1}`}>
-          <a className={leftStyle}>
+        <Link href={`/james/${page - 1}`} className={leftStyle}>
             <h3>&larr;</h3>
-          </a>
         </Link>
         <a href={homeLink} className={styles.navCircle}>
           <h3>&uarr;</h3>
         </a>
-        <Link href={`/james/${page + 1}`}>
-          <a className={rightStyle}>
+        <Link href={`/james/${page + 1}`} className={rightStyle}>
             <h3>&rarr;</h3>
-          </a>
         </Link>
       </div>
     </div>
